@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="consucontas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" [(ngModel)] ='conta.descricao' name = "descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input type="text" [(ngModel)] = "conta.valor"  name = "valor"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-item>
+        <ion-label>Specific days/months/years</ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY"></ion-datetime>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Tipo</ion-label>
+      <ion-select value="" placeholder="Selecione uma opção" required [(ngModel)]='conta.tipo' nome  = "tipo" [ngModelOptions]="{standalone: true}">
+      <ion-select-option *ngFor="let tipo of tipos" value="{{tipo.descricao}}">{{tipo.descricao}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Situação</ion-label>
+      <ion-select value="" placeholder="Selecione uma opção" required [(ngModel)]='conta.situacao' nome  = "tipo" [ngModelOptions]="{standalone: true}">
+      <ion-select-option [value]= "true" >Quitada</ion-select-option>
+        <ion-select-option [value]= "false" >Em aberta</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="block" >Salvar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

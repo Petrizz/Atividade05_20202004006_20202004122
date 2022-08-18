@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gerenciador de Contas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item detail [routerLink]="['../../consutipos']">
+    <ion-label>
+      <ion-icon name="man-outline"></ion-icon>
+      Tipos
+    </ion-label>
+  </ion-item>
+
+  <ion-item detail [routerLink]="['../../consucontas']">
+    <ion-label>
+      <ion-icon name="man-outline"></ion-icon>
+      Contas
+    </ion-label>
+  </ion-item>
+
+  <ion-item detail [routerLink]="'../../meusdados/' + id">
+    <ion-label>
+      <ion-icon name="man-outline"></ion-icon>
+      Meus dados
+    </ion-label>
+  </ion-item>
+  
+  <ion-item detail [routerLink]="['../../autenticar']">
+    <ion-label>
+      <ion-icon name="log-out-outline"></ion-icon>
+      Sair
+    </ion-label>
+  </ion-item>
+</ion-content>
